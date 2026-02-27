@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doncaster Community Development | Supporting Our Community</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+:root{
+  /* DCD Logo Colors */
+  --dcd-green:#2d7a3a;
+  --dcd-teal:#1a6b5c;
+  --dcd-red:#c0392b;
+  --dcd-blue:#1a5fa6;
+  --dcd-yellow:#e8a020;
+  --dcd-orange:#e05c20;
+
+  /* Design System */
+  --primary:#1a6b3a;
+  --primary-dark:#134f2b;
+  --primary-light:#2d8f4e;
+  --accent:#c8873a;
+  --accent-light:#e0a050;
+  --dark:#141414;
+  --charcoal:#222222;
+  --body:#3d3d3d;
+  --muted:#787878;
+  --cream:#f7f3ed;
+  --light:#fdfaf6;
+  --border:rgba(26,107,58,0.12);
+  --white:#ffffff;
+}
+
+body{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:var(--light);
+  color:var(--body);
+  overflow-x:hidden;
+}
+
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-thumb{background:var(--primary)}
+
+/* ══ NAV ══ */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3.5rem;height:100px;
+  background:rgba(253,250,246,0.97);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow 0.3s;
+}
+#nav.scrolled{box-shadow:0 4px 30px rgba(0,0,0,0.08)}
+
+/* DCD Logo - multicolor */
+.logo-mark{
+  display:flex;align-items:center;gap:0.75rem;
+  text-decoration:none;
+}
+.logo-icon{
+  width:42px;height:42px;position:relative;flex-shrink:0;
+}
+.logo-icon svg{width:100%;height:100%}
+.logo-text{line-height:1.1}
+.logo-title{
+  font-family:'Libre Baskerville',serif;
+  font-size:0.95rem;font-weight:700;
+  color:var(--charcoal);letter-spacing:0.01em;
+}
+.logo-sub{font-size:0.65rem;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase}
+
+.nav-links{display:flex;gap:0.1rem;list-style:none;align-items:center}
+.nav-links a{
+  font-size:0.8rem;font-weight:500;color:var(--body);
+  text-decoration:none;padding:0.45rem 0.8rem;border-radius:4px;
+  letter-spacing:0.02em;transition:all 0.18s;
+}
+.nav-links a:hover{background:rgba(26,107,58,0.08);color:var(--primary)}
+.nav-donate{
+  background:var(--primary);color:white;
+  padding:0.55rem 1.4rem;border-radius:5px;
+  font-size:0.8rem;font-weight:700;letter-spacing:0.04em;
+  text-decoration:none;transition:all 0.2s;
+  border:2px solid var(--primary);
+}
+.nav-donate:hover{background:transparent;color:var(--primary)}
+
+/* ══ HERO ══ */
+.hero{
+  min-height:100vh;padding-top:68px;
+  display:grid;grid-template-columns:52% 48%;
+  position:relative;
+}
+.hero-l{
+  background:var(--primary);
+  padding:5.5rem 4.5rem 5.5rem 5rem;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.hero-l::before{
+  content:'';position:absolute;
+  top:-100px;right:-100px;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle, rgba(200,135,58,0.15) 0%, transparent 70%);
+}
+.hero-l::after{
+  content:'';position:absolute;
+  bottom:-60px;left:-60px;
+  width:250px;height:250px;border-radius:50%;
+  background:rgba(255,255,255,0.04);
+}
+.hero-tag-pill{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
+  border-radius:50px;padding:0.35rem 1rem 0.35rem 0.5rem;
+  margin-bottom:2rem;width:fit-content;
+}
+.pill-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--accent-light);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(1.3)}}
+.pill-text{font-size:0.72rem;color:rgba(255,255,255,0.85);letter-spacing:0.06em;font-weight:500}
+.hero-h1{
+  font-family:'Libre Baskerville',serif;
+  font-size:3.7rem;font-weight:700;color:white;
+  line-height:1.08;margin-bottom:1.6rem;
+  position:relative;z-index:1;
+}
+.hero-h1 .line2{color:var(--accent-light)}
+.hero-h1 .line3{color:rgba(255,255,255,0.55);font-style:italic;font-size:3rem}
+.hero-sub{
+  font-size:0.97rem;line-height:1.78;
+  color:rgba(255,255,255,0.7);
+  max-width:400px;margin-bottom:2.5rem;
+  position:relative;z-index:1;
+}
+.hero-btns{display:flex;gap:0.8rem;flex-wrap:wrap;position:relative;z-index:1}
+.btn-accent{
+  background:var(--accent);color:white;
+  padding:0.85rem 2rem;border-radius:5px;
+  font-size:0.86rem;font-weight:700;letter-spacing:0.05em;
+  text-decoration:none;transition:all 0.2s;border:2px solid var(--accent);
+}
+.btn-accent:hover{background:var(--accent-light);border-color:var(--accent-light);transform:translateY(-2px)}
+.btn-outline-w{
+  border:2px solid rgba(255,255,255,0.35);color:white;
+  padding:0.85rem 2rem;border-radius:5px;
+  font-size:0.86rem;font-weight:600;letter-spacing:0.05em;
+  text-decoration:none;transition:all 0.2s;
+}
+.btn-outline-w:hover{border-color:rgba(255,255,255,0.8);background:rgba(255,255,255,0.07)}
+.hero-stats{
+  display:flex;gap:2.5rem;margin-top:3.5rem;
+  padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.12);
+  position:relative;z-index:1;
+}
+.hs-val{
+  font-family:'Libre Baskerville',serif;
+  font-size:1.8rem;font-weight:700;color:var(--accent-light);
+}
+.hs-lbl{font-size:0.74rem;color:rgba(255,255,255,0.5);margin-top:0.15rem;letter-spacing:0.03em}
+
+.hero-r{position:relative;overflow:hidden}
+.hero-r img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-r-ov{
+  position:absolute;inset:0;
+  background:linear-gradient(to right,rgba(26,107,58,0.4) 0%,transparent 40%),
+             linear-gradient(to top,rgba(20,20,20,0.5) 0%,transparent 45%);
+}
+.hero-float{
+  position:absolute;bottom:2.5rem;left:2.5rem;
+  background:white;border-radius:8px;
+  padding:1.1rem 1.5rem;
+  box-shadow:0 16px 48px rgba(0,0,0,0.15);
+  display:flex;align-items:center;gap:0.9rem;
+  animation:float 3.5s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hf-icon{font-size:1.6rem}
+.hf-label{font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.09em}
+.hf-val{font-size:0.92rem;font-weight:700;color:var(--dark)}
+.hero-badge{
+  position:absolute;top:2rem;right:2rem;
+  background:var(--primary);color:white;
+  border-radius:8px;padding:0.9rem 1.2rem;text-align:center;
+}
+.hb-main{font-family:'Libre Baskerville',serif;font-size:1.4rem;font-weight:700;color:var(--accent-light)}
+.hb-sub{font-size:0.68rem;opacity:0.7;letter-spacing:0.05em;margin-top:0.1rem}
+
+/* ══ MISSION BAR ══ */
+.mbar{background:var(--dark);padding:2.5rem 0}
+.mbar-in{
+  max-width:1200px;margin:0 auto;padding:0 3.5rem;
+  display:flex;align-items:center;gap:4rem;flex-wrap:wrap;
+}
+.mbar-q{
+  font-family:'Libre Baskerville',serif;
+  font-size:1.25rem;font-style:italic;color:white;flex:1;line-height:1.5;
+  min-width:200px;
+}
+.mbar-q strong{color:var(--accent-light);font-style:normal}
+.mbar-sep{width:1px;height:48px;background:rgba(255,255,255,0.12);flex-shrink:0}
+.mbar-vals{display:flex;gap:3rem;flex-shrink:0}
+.mv-n{
+  font-family:'Libre Baskerville',serif;
+  font-size:1.7rem;font-weight:700;color:var(--accent-light);
+}
+.mv-l{font-size:0.72rem;color:rgba(255,255,255,0.4);margin-top:0.1rem}
+
+/* ══ SHARED ══ */
+.sec{padding:6rem 0}
+.con{max-width:1200px;margin:0 auto;padding:0 3.5rem}
+.eyebrow{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--accent);display:flex;align-items:center;gap:0.7rem;margin-bottom:0.9rem;
+}
+.eyebrow::before{content:'';width:1.6rem;height:2px;background:var(--accent)}
+.sh{
+  font-family:'Libre Baskerville',serif;
+  font-size:2.5rem;font-weight:700;color:var(--dark);line-height:1.18;
+}
+.sh em{color:var(--primary);font-style:italic}
+.sp{font-size:0.95rem;line-height:1.8;color:var(--muted);max-width:520px;margin-top:0.9rem}
+
+.btn-primary{
+  display:inline-block;
+  background:var(--primary);color:white;
+  padding:0.8rem 2rem;border-radius:5px;
+  font-size:0.84rem;font-weight:700;letter-spacing:0.04em;
+  text-decoration:none;transition:all 0.2s;border:2px solid var(--primary);
+}
+.btn-primary:hover{background:transparent;color:var(--primary);transform:translateY(-2px)}
+
+/* ══ FUNERAL ══ */
+.funeral-bg{background:var(--cream)}
+.funeral-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:start;margin-top:4.5rem;
+}
+.funeral-img-wrap{position:relative}
+.funeral-hero-img{
+  width:100%;height:380px;object-fit:cover;
+  border-radius:4px;display:block;
+}
+.funeral-poster{
+  position:absolute;top:-1.5rem;right:-1.5rem;
+  width:200px;border-radius:4px;overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.2);
+  border:3px solid white;
+}
+.funeral-poster img{width:100%;display:block}
+.funeral-thumb-row{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:8px;
+}
+.funeral-thumb-row img{
+  width:100%;aspect-ratio:1;object-fit:cover;
+  border-radius:3px;display:block;
+  transition:transform 0.3s;cursor:pointer;
+}
+.funeral-thumb-row img:hover{transform:scale(1.05)}
+
+.funeral-content .eyebrow{margin-bottom:1.2rem}
+.f-arabic{
+  font-size:1.2rem;color:var(--primary);
+  font-weight:600;margin-top:1rem;
+  padding:0.8rem 1.2rem;
+  background:rgba(26,107,58,0.06);
+  border-left:3px solid var(--primary);
+  border-radius:0 4px 4px 0;
+  display:inline-block;
+}
+.f-arabic-sub{font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem}
+.funeral-desc{font-size:0.94rem;line-height:1.82;color:var(--muted);margin-top:1.4rem}
+.funeral-feats{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0.8rem;margin-top:2rem;
+}
+.ff{
+  padding:1.1rem 1.3rem;
+  background:white;border:1px solid var(--border);
+  border-radius:4px;border-left:3px solid var(--primary);
+}
+.ff-t{font-size:0.86rem;font-weight:700;color:var(--dark);margin-bottom:0.25rem}
+.ff-d{font-size:0.78rem;color:var(--muted);line-height:1.5}
+.funeral-note{
+  margin-top:1.8rem;
+  background:rgba(192,57,43,0.05);
+  border-left:3px solid var(--dcd-red);
+  border-radius:0 4px 4px 0;
+  padding:1.2rem 1.4rem;
+  font-size:0.88rem;font-style:italic;color:var(--body);line-height:1.65;
+}
+.funeral-note strong{color:var(--dcd-red);font-style:normal}
+
+/* ══ BANK DETAILS ══ */
+.bank-wrap{
+  margin-top:2rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+}
+.bank-card{
+  background:var(--primary);color:white;
+  border-radius:6px;padding:1.4rem;
+}
+.bank-card-title{
+  font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:rgba(255,255,255,0.6);margin-bottom:0.8rem;font-weight:600;
+}
+.bank-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem}
+.bank-key{font-size:0.74rem;color:rgba(255,255,255,0.55)}
+.bank-val{font-size:0.82rem;font-weight:700;color:white;font-family:'Libre Baskerville',serif}
+
+/* ══ DEFIB ══ */
+.defib-bg{background:var(--primary)}
+.defib-in{
+  display:grid;grid-template-columns:1fr 1fr;gap:5.5rem;align-items:center;
+}
+.defib-hero-img{
+  width:100%;height:340px;object-fit:cover;
+  border-radius:4px;display:block;
+  border:3px solid rgba(255,255,255,0.15);
+}
+.defib-sub-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;
+}
+.defib-sub-grid img{
+  width:100%;height:140px;object-fit:cover;
+  border-radius:3px;display:block;
+}
+.defib-content .eyebrow{color:var(--accent-light)}
+.defib-content .sh{color:white}
+.defib-content .sh em{color:var(--accent-light)}
+.defib-desc{font-size:0.94rem;line-height:1.8;color:rgba(255,255,255,0.65);margin-top:1rem}
+.defib-highlights{
+  display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-top:2rem;
+}
+.dh{
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:4px;padding:1.2rem;
+}
+.dh-title{font-size:0.85rem;font-weight:700;color:white;margin-bottom:0.3rem}
+.dh-text{font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.5}
+.defib-stats{display:flex;gap:2.5rem;margin-top:2.2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1)}
+.ds-n{
+  font-family:'Libre Baskerville',serif;
+  font-size:1.8rem;font-weight:700;color:var(--accent-light);
+}
+.ds-l{font-size:0.73rem;color:rgba(255,255,255,0.45);margin-top:0.1rem}
+
+/* ══ RAMADHAN ══ */
+.ramadhan-bg{background:white}
+.ram-head{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;
+  margin-bottom:4rem;
+}
+.ram-imgs{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;
+}
+.ram-img-big{grid-column:span 2}
+.ram-imgs img{width:100%;object-fit:cover;border-radius:4px;display:block}
+.ram-imgs .ri-big{height:240px;grid-column:span 2}
+.ram-imgs .ri-sm{height:140px}
+.ram-cards{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.5px;background:rgba(0,0,0,0.06);margin-top:0;
+}
+.rc{
+  background:white;padding:2.2rem 2rem;
+  position:relative;overflow:hidden;transition:all 0.3s;
+}
+.rc:hover{transform:translateY(-3px);z-index:1;box-shadow:0 16px 48px rgba(0,0,0,0.1)}
+.rc-num{
+  position:absolute;top:1.2rem;right:1.5rem;
+  font-family:'Libre Baskerville',serif;
+  font-size:4rem;font-weight:700;
+  color:rgba(26,107,58,0.05);line-height:1;
+}
+.rc-icon{font-size:2rem;display:block;margin-bottom:1.2rem}
+.rc-title{
+  font-family:'Libre Baskerville',serif;
+  font-size:1.1rem;font-weight:700;color:var(--dark);margin-bottom:0.6rem;
+}
+.rc-text{font-size:0.84rem;line-height:1.65;color:var(--muted)}
+.ram-cta-strip{
+  background:var(--primary);padding:3rem 4rem;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:2rem;margin-top:1.5px;
+}
+.rcs-text{
+  font-family:'Libre Baskerville',serif;
+  font-size:1.4rem;font-style:italic;color:white;line-height:1.4;
+}
+.rcs-text strong{color:var(--accent-light);font-style:normal}
+
+/* ══ HOMELESS ══ */
+.homeless-bg{background:var(--cream)}
+.homeless-in{
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;
+}
+.homeless-imgs-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;
+}
+.hig img{width:100%;object-fit:cover;border-radius:4px;display:block;transition:transform 0.4s}
+.hig:hover img{transform:scale(1.03)}
+.hig.tall{grid-row:span 2}
+.hig.tall img{height:100%}
+.hig:not(.tall) img{height:180px}
+.homeless-list{margin-top:2rem;display:flex;flex-direction:column;gap:0.8rem}
+.hl{
+  display:flex;gap:1rem;align-items:flex-start;
+  padding:1rem 1.2rem;
+  background:white;border-radius:4px;
+  border-left:3px solid var(--primary);
+}
+.hl-icon{font-size:1.2rem;flex-shrink:0;margin-top:0.1rem}
+.hl-t{font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:0.2rem}
+.hl-d{font-size:0.8rem;color:var(--muted);line-height:1.5}
+.homeless-note{
+  margin-top:1.5rem;padding:1.2rem 1.4rem;
+  background:rgba(26,107,58,0.06);border-radius:4px;
+  font-size:0.88rem;line-height:1.65;color:var(--body);
+}
+.homeless-note strong{color:var(--primary)}
+
+/* ══ GALLERY – from other-projects page ══ */
+.gallery-bg{background:white}
+.gallery-top{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;
+  align-items:start;margin-bottom:4rem;
+}
+.gallery-about{
+  font-size:0.95rem;line-height:1.8;color:var(--muted);margin-top:1rem;
+}
+.join-box{
+  background:var(--primary);border-radius:6px;padding:2rem;
+  display:flex;flex-direction:column;
+}
+.join-box .sh{color:white;font-size:1.8rem}
+.join-box p{font-size:0.88rem;color:rgba(255,255,255,0.65);margin-top:0.8rem;line-height:1.65}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+.gg{overflow:hidden;border-radius:4px;position:relative}
+.gg img{width:100%;height:220px;object-fit:cover;display:block;transition:transform 0.5s}
+.gg:hover img{transform:scale(1.06)}
+.gg.tall img{height:452px}
+.gg-ov{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(26,107,58,0.75) 0%,transparent 50%);
+  opacity:0;transition:opacity 0.3s;
+  display:flex;align-items:flex-end;padding:1.2rem;
+}
+.gg:hover .gg-ov{opacity:1}
+.gg-label{color:white;font-size:0.85rem;font-weight:600}
+
+/* ══ DONATE ══ */
+.donate-bg{background:var(--dark);padding:6rem 0}
+.donate-inner{
+  max-width:1100px;margin:0 auto;padding:0 3.5rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;
+}
+.donate-info .eyebrow{color:var(--accent-light)}
+.donate-info .sh{color:white}
+.donate-desc{font-size:0.95rem;color:rgba(255,255,255,0.6);margin-top:1rem;line-height:1.8}
+.donate-policy{
+  margin-top:2rem;padding:1rem 1.4rem;
+  background:rgba(200,135,58,0.12);border:1px solid rgba(200,135,58,0.25);
+  border-radius:4px;display:flex;align-items:center;gap:0.8rem;
+}
+.dp-icon{font-size:1.4rem}
+.dp-text{font-size:0.85rem;color:rgba(255,255,255,0.8);font-weight:600}
+.dp-sub{font-size:0.75rem;color:rgba(255,255,255,0.45);margin-top:0.1rem}
+
+.bank-section{margin-top:2.5rem}
+.bs-title{
+  font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);font-weight:600;margin-bottom:1rem;
+}
+.bank-cards-row{display:flex;flex-direction:column;gap:0.8rem}
+.bc{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:6px;padding:1.3rem 1.5rem;
+}
+.bc-name{
+  font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;
+  color:var(--accent-light);font-weight:700;margin-bottom:0.8rem;
+}
+.bc-rows{display:flex;flex-direction:column;gap:0.35rem}
+.bc-row{display:flex;justify-content:space-between}
+.bc-key{font-size:0.78rem;color:rgba(255,255,255,0.45)}
+.bc-val{font-size:0.82rem;font-weight:700;color:white;letter-spacing:0.03em}
+
+/* donate form */
+.donate-form-wrap{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:2.5rem;
+}
+.df-title{
+  font-family:'Libre Baskerville',serif;
+  font-size:1.4rem;color:white;margin-bottom:0.4rem;
+}
+.df-sub{font-size:0.84rem;color:rgba(255,255,255,0.45);margin-bottom:2rem}
+.amount-pills{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem}
+.ap{
+  padding:0.5rem 1.2rem;border-radius:50px;
+  border:1px solid rgba(255,255,255,0.2);
+  color:rgba(255,255,255,0.65);font-size:0.82rem;font-weight:600;
+  cursor:pointer;transition:all 0.18s;background:none;font-family:'Plus Jakarta Sans',sans-serif;
+}
+.ap:hover,.ap.sel{background:var(--accent);border-color:var(--accent);color:white}
+.dfg{margin-bottom:1rem}
+.dfg label{
+  display:block;font-size:0.72rem;font-weight:700;
+  letter-spacing:0.09em;text-transform:uppercase;
+  color:rgba(255,255,255,0.45);margin-bottom:0.45rem;
+}
+.dfg input,.dfg textarea,.dfg select{
+  width:100%;padding:0.8rem 1rem;
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:4px;color:white;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:0.88rem;
+  outline:none;transition:border-color 0.2s;
+}
+.dfg input:focus,.dfg textarea:focus,.dfg select:focus{border-color:var(--accent)}
+.dfg input::placeholder,.dfg textarea::placeholder{color:rgba(255,255,255,0.25)}
+.dfg textarea{resize:none;height:90px}
+.dfg-row{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem}
+.df-submit{
+  width:100%;padding:0.9rem;
+  background:var(--primary);color:white;border:none;
+  border-radius:4px;font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:0.88rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;
+  cursor:pointer;transition:all 0.2s;margin-top:0.3rem;
+}
+.df-submit:hover{background:var(--primary-light);transform:translateY(-1px)}
+
+/* ══ OTHER PROJECTS ══ */
+.other-bg{background:var(--cream)}
+.projects-about{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;
+  align-items:start;margin-bottom:4rem;
+}
+.about-img{
+  position:relative;
+}
+.about-img img{
+  width:100%;height:300px;object-fit:cover;
+  border-radius:4px;display:block;
+}
+.about-quote-tag{
+  position:absolute;bottom:1.5rem;right:1.5rem;
+  background:white;border-radius:4px;
+  padding:0.9rem 1.2rem;
+  box-shadow:0 12px 40px rgba(0,0,0,0.15);
+  max-width:200px;
+}
+.aqt-text{font-size:0.82rem;font-style:italic;color:var(--dark);line-height:1.4}
+.aqt-marks{font-size:1.4rem;color:var(--primary);line-height:0.8;display:block;margin-bottom:0.3rem}
+.projects-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1.5px;background:rgba(0,0,0,0.07);
+}
+.pg{
+  background:white;padding:2rem 1.8rem;
+  transition:all 0.3s;border-top:3px solid transparent;
+}
+.pg:hover{border-top-color:var(--accent);transform:translateY(-3px);z-index:1;box-shadow:0 16px 40px rgba(0,0,0,0.1)}
+.pg-icon{font-size:2rem;display:block;margin-bottom:1rem}
+.pg-t{font-size:0.95rem;font-weight:700;color:var(--dark);margin-bottom:0.4rem}
+.pg-d{font-size:0.8rem;line-height:1.6;color:var(--muted)}
+
+/* ══ CONTACT ══ */
+.contact-bg{background:white;padding:6rem 0}
+.contact-in{
+  display:grid;grid-template-columns:1fr 1.1fr;gap:6rem;align-items:start;
+}
+.contact-info .eyebrow{margin-bottom:1.5rem}
+.contact-desc{font-size:0.94rem;line-height:1.8;color:var(--muted);margin-top:1rem}
+.cinfo-list{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.2rem}
+.ci{display:flex;align-items:center;gap:1rem}
+.ci-ico{
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(26,107,58,0.1);
+  display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;
+  color:var(--primary);
+}
+.ci-lbl{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.15rem}
+.ci-val{font-size:0.93rem;font-weight:600;color:var(--dark)}
+.social-row{display:flex;gap:0.6rem;margin-top:2rem}
+.soc{
+  width:38px;height:38px;border-radius:4px;
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;text-decoration:none;transition:all 0.2s;color:var(--muted);
+}
+.soc:hover{background:var(--primary);border-color:var(--primary);color:white}
+.quick-links{
+  margin-top:2.5rem;padding:1.5rem;
+  background:var(--cream);border-radius:6px;
+}
+.ql-title{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem}
+.ql-pills{display:flex;flex-wrap:wrap;gap:0.5rem}
+.ql-pill{
+  font-size:0.78rem;padding:0.38rem 0.9rem;
+  border:1px solid var(--border);border-radius:50px;
+  color:var(--body);text-decoration:none;transition:all 0.2s;
+}
+.ql-pill:hover{background:var(--primary);border-color:var(--primary);color:white}
+
+.contact-form{
+  background:var(--cream);border:1px solid var(--border);
+  border-radius:8px;padding:2.5rem;
+}
+.cf-title{
+  font-family:'Libre Baskerville',serif;
+  font-size:1.5rem;font-weight:700;color:var(--dark);margin-bottom:0.3rem;
+}
+.cf-sub{font-size:0.84rem;color:var(--muted);margin-bottom:2rem}
+.cfg{margin-bottom:1rem}
+.cfg label{
+  display:block;font-size:0.72rem;font-weight:700;
+  letter-spacing:0.09em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:0.45rem;
+}
+.cfg input,.cfg textarea,.cfg select{
+  width:100%;padding:0.8rem 1rem;
+  border:1px solid var(--border);border-radius:4px;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9rem;
+  color:var(--dark);background:white;
+  outline:none;transition:border-color 0.2s;
+}
+.cfg input:focus,.cfg textarea:focus,.cfg select:focus{border-color:var(--primary)}
+.cfg textarea{resize:none;height:100px}
+.cfg-row{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem}
+.cf-sub-btn{
+  width:100%;padding:0.9rem;
+  background:var(--primary);color:white;border:none;border-radius:4px;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:0.88rem;
+  font-weight:700;letter-spacing:0.05em;text-transform:uppercase;
+  cursor:pointer;transition:all 0.2s;margin-top:0.3rem;
+}
+.cf-sub-btn:hover{background:var(--primary-light);transform:translateY(-1px)}
+.cf-urgent{
+  font-size:0.78rem;color:var(--muted);
+  text-align:center;margin-top:1rem;
+}
+.cf-urgent strong{color:var(--dcd-red)}
+
+/* ══ FOOTER ══ */
+footer{background:var(--charcoal);padding:4.5rem 0 2rem;border-top:1px solid rgba(200,135,58,0.15)}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;
+  gap:3.5rem;margin-bottom:4rem;
+}
+.fb-name{
+  font-family:'Libre Baskerville',serif;
+  font-size:1.2rem;font-weight:700;color:white;margin-bottom:0.7rem;
+}
+.fb-name span{color:var(--accent-light)}
+.fb-desc{font-size:0.84rem;line-height:1.75;color:rgba(255,255,255,0.38);margin-bottom:1.2rem}
+.fb-tag{
+  display:inline-block;
+  font-size:0.72rem;color:rgba(200,135,58,0.7);
+  padding:0.35rem 0.8rem;border:1px solid rgba(200,135,58,0.25);border-radius:20px;
+}
+.fc-h{
+  font-size:0.68rem;font-weight:700;letter-spacing:0.15em;
+  text-transform:uppercase;color:var(--accent-light);margin-bottom:1.2rem;
+}
+.fc a{
+  display:block;font-size:0.84rem;color:rgba(255,255,255,0.42);
+  text-decoration:none;margin-bottom:0.55rem;transition:color 0.2s;
+}
+.fc a:hover{color:white}
+.footer-contact-i{
+  display:flex;align-items:center;gap:0.65rem;
+  font-size:0.84rem;color:rgba(255,255,255,0.42);margin-bottom:0.6rem;
+}
+.footer-contact-i i{font-size:0.85rem;color:var(--accent-light);flex-shrink:0;width:14px}
+.footer-soc{display:flex;gap:0.5rem;margin-top:1.2rem}
+.footer-soc a{
+  width:34px;height:34px;border-radius:4px;
+  border:1px solid rgba(255,255,255,0.12);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.9rem;text-decoration:none;transition:all 0.2s;
+}
+.footer-soc a:hover{background:var(--accent);border-color:var(--accent)}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.07);
+  padding-top:2rem;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
+}
+.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.25)}
+.footer-policy{display:flex;gap:2rem}
+.footer-policy a{font-size:0.78rem;color:rgba(255,255,255,0.25);text-decoration:none}
+.footer-policy a:hover{color:rgba(255,255,255,0.6)}
+
+/* ══ FONT AWESOME ICON STYLES ══ */
+.fa-icon-circle{
+  width:46px;height:46px;border-radius:50%;
+  background:rgba(26,107,58,0.1);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  color:var(--primary);font-size:1rem;
+}
+.fa-icon-circle.white{background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.85)}
+.fa-icon-circle.accent{background:rgba(200,135,58,0.12);color:var(--accent)}
+.rc-icon-fa{
+  width:48px;height:48px;border-radius:10px;
+  background:rgba(26,107,58,0.08);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--primary);font-size:1.3rem;margin-bottom:1.2rem;
+}
+.rc-icon-fa.dark-bg{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.9)}
+.pg-icon-fa{
+  width:44px;height:44px;border-radius:8px;
+  background:rgba(26,107,58,0.08);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--primary);font-size:1.1rem;margin-bottom:1rem;
+}
+.ff-icon{color:var(--primary);margin-right:0.5rem;font-size:0.85rem}
+.dh-icon{color:var(--accent-light);margin-right:0.5rem}
+.hl-icon-fa{
+  width:36px;height:36px;border-radius:8px;flex-shrink:0;
+  background:rgba(26,107,58,0.08);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--primary);font-size:0.9rem;margin-top:0.1rem;
+}
+.hf-icon-fa{font-size:1.4rem;color:var(--primary)}
+.nav-icon{margin-right:0.35rem;font-size:0.75rem;opacity:0.7}
+
+/* ══ REVEAL ══ */
+.rv{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ══ MOBILE MENU BTN ══ */
+.mobile-menu-btn{
+  display:none;
+  flex-direction:column;justify-content:center;align-items:center;
+  gap:5px;width:40px;height:40px;
+  background:none;border:1px solid var(--border);
+  border-radius:5px;cursor:pointer;padding:0;
+}
+.mobile-menu-btn span{
+  display:block;width:20px;height:2px;
+  background:var(--body);border-radius:2px;
+  transition:all 0.3s;
+}
+.mobile-menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mobile-menu-btn.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.mobile-menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ══ MOBILE MENU OVERLAY ══ */
+.mobile-menu{
+  position:fixed;top:0;right:0;bottom:0;z-index:2000;
+  width:min(340px,90vw);
+  background:var(--light);
+  transform:translateX(100%);
+  transition:transform 0.38s cubic-bezier(0.4,0,0.2,1);
+  display:flex;flex-direction:column;
+  box-shadow:-8px 0 48px rgba(0,0,0,0.15);
+  overflow-y:auto;
+}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-backdrop{
+  position:fixed;inset:0;z-index:1999;
+  background:rgba(20,20,20,0.5);
+  backdrop-filter:blur(4px);
+  opacity:0;pointer-events:none;
+  transition:opacity 0.35s;
+}
+.mobile-menu-backdrop.show{opacity:1;pointer-events:all}
+
+.mm-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.2rem 1.5rem;
+  border-bottom:1px solid var(--border);
+}
+.mm-logo{text-decoration:none}
+.mm-close{
+  background:none;border:none;cursor:pointer;
+  width:36px;height:36px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;color:var(--body);
+  transition:background 0.2s;
+}
+.mm-close:hover{background:rgba(0,0,0,0.06)}
+.mm-nav{
+  flex:1;padding:1rem 0;display:flex;flex-direction:column;
+}
+.mm-nav a{
+  display:flex;align-items:center;gap:0.9rem;
+  padding:1rem 1.5rem;font-size:0.95rem;font-weight:500;
+  color:var(--body);text-decoration:none;
+  border-bottom:1px solid rgba(0,0,0,0.04);
+  transition:all 0.18s;
+}
+.mm-nav a i{width:20px;text-align:center;color:var(--primary);font-size:0.9rem}
+.mm-nav a:hover{background:rgba(26,107,58,0.06);color:var(--primary);padding-left:2rem}
+.mm-bottom{padding:1.5rem;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:0.8rem}
+.mm-donate{
+  display:flex;align-items:center;justify-content:center;gap:0.5rem;
+  background:var(--primary);color:white;padding:0.9rem;
+  border-radius:5px;font-weight:700;font-size:0.9rem;letter-spacing:0.03em;
+  text-decoration:none;transition:background 0.2s;
+}
+.mm-donate:hover{background:var(--primary-light)}
+.mm-contact-quick a{
+  display:flex;align-items:center;justify-content:center;gap:0.5rem;
+  color:var(--muted);font-size:0.84rem;text-decoration:none;
+}
+.mm-contact-quick i{color:var(--primary)}
+
+/* ══ LIGHTBOX ══ */
+.lightbox{
+  position:fixed;inset:0;z-index:3000;
+  display:none;align-items:center;justify-content:center;
+}
+.lightbox.open{display:flex}
+.lb-backdrop{
+  position:absolute;inset:0;
+  background:rgba(14,14,14,0.94);
+  backdrop-filter:blur(8px);
+}
+.lb-inner{
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;align-items:center;
+  max-width:90vw;max-height:90vh;
+}
+.lb-img{
+  max-width:88vw;max-height:78vh;
+  object-fit:contain;border-radius:6px;
+  box-shadow:0 30px 80px rgba(0,0,0,0.5);
+  transition:opacity 0.25s;
+}
+.lb-img.fading{opacity:0}
+.lb-caption{
+  margin-top:1rem;color:rgba(255,255,255,0.75);
+  font-size:0.88rem;letter-spacing:0.02em;text-align:center;
+}
+.lb-counter{
+  margin-top:0.4rem;color:rgba(255,255,255,0.35);
+  font-size:0.75rem;
+}
+.lb-close{
+  position:fixed;top:1.5rem;right:1.5rem;z-index:2;
+  background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);
+  color:white;width:44px;height:44px;border-radius:50%;
+  font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background 0.2s;
+}
+.lb-close:hover{background:rgba(255,255,255,0.22)}
+.lb-prev,.lb-next{
+  position:fixed;top:50%;transform:translateY(-50%);z-index:2;
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);
+  color:white;width:48px;height:48px;border-radius:50%;
+  font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;
+}
+.lb-prev{left:1.5rem}
+.lb-next{right:1.5rem}
+.lb-prev:hover,.lb-next:hover{background:rgba(255,255,255,0.22);transform:translateY(-50%) scale(1.08)}
+
+/* ══ LIGHTBOX TRIGGER IMAGES ══ */
+.gg img, .funeral-thumb-row img, .ram-imgs img, .defib-sub-grid img,
+.defib-hero-img, .funeral-hero-img, .hig img{
+  cursor:zoom-in;
+}
+
+/* ══ STICKY COLUMN ══ */
+.sticky-col{
+  position:sticky;
+  top:calc(68px + 2rem);
+  align-self:start;
+}
+/* Apply sticky to shorter side in two-col grids */
+.defib-in .defib-content,
+.homeless-in > .rv:last-child,
+.projects-about > div:last-child,
+.contact-in > .rv:first-child,
+.donate-inner .donate-form-wrap{
+  position:sticky;
+  top:calc(68px + 2rem);
+  align-self:start;
+}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:1100px){
+  #nav{padding:0 1.5rem}
+  .nav-links{display:none}
+  .mobile-menu-btn{display:flex}
+  .hero{grid-template-columns:1fr}
+  .hero-r{height:75vw}
+  .hero-l{padding:4rem 2rem}
+  .hero-h1{font-size:2.8rem}
+  .mbar-in{flex-direction:column;gap:1.5rem;padding:0 1.5rem}
+  .mbar-sep{display:none}
+  .con{padding:0 1.5rem}
+  .funeral-grid,.defib-in,.homeless-in,.contact-in,.donate-inner,.projects-about,.gallery-top,.ram-head{
+    grid-template-columns:1fr;gap:2.5rem;
+  }
+  .ram-cards,.projects-grid{grid-template-columns:1fr 1fr}
+  .funeral-feats,.defib-highlights,.bank-wrap,.donate-inner .bank-cards-row{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .gg.tall img{height:220px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .hero-stats{gap:1.5rem}
+  .defib-sub-grid,.funeral-thumb-row{grid-template-columns:repeat(3,1fr)}
+  .nav-donate{display: none;}
+  .funeral-gallery-wrap,.defib-in .defib-content, .homeless-in > .rv:last-child, .projects-about > div:last-child,
+   .contact-in > .rv:first-child, .donate-inner .donate-form-wrap{position: relative!important;top: 0!important;}
+   .sec,#donate,.contact-bg {
+    padding: 3rem 0!important;
+}
+}
+@media(max-width:600px){
+  .hero-h1{font-size:2.1rem}
+  .sh{font-size:2rem}
+  .ram-cards,.projects-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .dfg-row,.cfg-row{grid-template-columns:1fr}
+  .mbar-vals{flex-wrap:wrap;gap:1.5rem}
+  .amount-pills{gap:0.4rem}
+  .hero-stats{flex-wrap:wrap;gap:1.5rem}
+  .ram-cta-strip{flex-direction:column;padding:2rem}
+  .bank-wrap{grid-template-columns:1fr}
+  /* Disable sticky on mobile */
+  .funeral-gallery-wrap, .donate-cta-panel {
+    position: static;
+  }
+  .defib-in .defib-content,
+  .homeless-in > .rv:last-child,
+  .projects-about > div:last-child,
+  .contact-in > .rv:first-child,
+  .donate-inner .donate-form-wrap{
+    position:static;
+  }
+  .donate-inner{
+        padding: 0 1.9rem;
+  }
+  .donate-cta-panel{
+     padding: 1rem;
+  }
+}
+
+/* ══ REAL LOGO ══ */
+.logo-mark {
+  display:flex;align-items:center;gap:0;
+  text-decoration:none;
+}
+.logo-img-real {
+  height:100px;width:auto;display:block;object-fit:contain;
+}
+
+/* ══ FUNERAL GALLERY ══ */
+.funeral-gallery-wrap { position:sticky; top:calc(68px + 2rem); align-self:start; }
+.fg-main { border-radius:4px; overflow:hidden; margin-bottom:8px; }
+.fg-main img { width:100%;height:360px;object-fit:cover;display:block; transition:transform 0.5s; cursor:zoom-in; }
+.fg-main:hover img { transform:scale(1.03); }
+.fg-thumbs {
+  display:grid;grid-template-columns:repeat(5,1fr);gap:6px;
+}
+.fg-thumb {
+  position:relative;border-radius:3px;overflow:hidden;cursor:zoom-in;
+}
+.fg-thumb img {
+  width:100%;aspect-ratio:1;object-fit:cover;display:block;
+  transition:transform 0.35s;
+}
+.fg-thumb:hover img { transform:scale(1.08); }
+.fg-thumb-ov {
+  position:absolute;inset:0;
+  background:rgba(26,107,58,0.55);
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-size:1rem;
+  opacity:0;transition:opacity 0.25s;
+}
+.fg-thumb:hover .fg-thumb-ov { opacity:1; }
+
+/* ══ DONATE CTA PANEL ══ */
+.donate-cta-panel {
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:2.5rem;
+  position:sticky;top:calc(68px + 2rem);align-self:start;
+}
+.dcp-title {
+  font-family:'Libre Baskerville',serif;
+  font-size:1.5rem;color:white;margin-bottom:0.4rem;
+}
+.dcp-sub {font-size:0.88rem;color:rgba(255,255,255,0.45);margin-bottom:2rem;line-height:1.6;}
+.dcp-steps {display:flex;flex-direction:column;gap:1.2rem;margin-bottom:2rem;}
+.dcp-step {display:flex;gap:1rem;align-items:flex-start;}
+.dcp-step-num {
+  width:32px;height:32px;border-radius:50%;flex-shrink:0;
+  background:var(--accent);color:white;
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.85rem;font-weight:700;margin-top:0.1rem;
+}
+.dcp-step-t {font-size:0.9rem;font-weight:700;color:white;margin-bottom:0.2rem;}
+.dcp-step-d {font-size:0.79rem;color:rgba(255,255,255,0.5);line-height:1.5;}
+.dcp-btn {
+  display:block;text-align:center;
+  background:var(--primary);color:white;
+  padding:0.9rem;border-radius:4px;
+  font-size:0.88rem;font-weight:700;letter-spacing:0.04em;
+  text-decoration:none;transition:all 0.2s;margin-bottom:1.2rem;
+}
+.dcp-btn:hover {background:var(--primary-light);transform:translateY(-1px);}
+.dcp-policy {
+  display:flex;align-items:center;gap:0.6rem;
+  font-size:0.78rem;color:rgba(255,255,255,0.4);
+  padding:0.8rem 1rem;
+  background:rgba(200,135,58,0.1);
+  border-radius:4px;margin-bottom:1.5rem;
+}
+.dcp-social-lbl {font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);}
+
+
+/* ══ MASONRY GALLERY ══ */
+.masonry-grid {
+  columns: 3;
+  column-gap: 10px;
+}
+@media(max-width:768px){ .masonry-grid { columns: 2; } }
+@media(max-width:480px){ .masonry-grid { columns: 1; } }
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 10px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: zoom-in;
+  display: block;
+}
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.masonry-item:hover img { transform: scale(1.04); }
+.masonry-ov {
+  position: absolute;
+  inset: 0;
+  background: rgba(26,107,58,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.25s;
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+.masonry-item:hover .masonry-ov { opacity: 1; }
+
+/* Hidden items for Load More */
+.masonry-hidden {
+  display: none;
+}
+.masonry-hidden.masonry-visible {
+  display: block;
+  animation: masonryFadeIn 0.5s ease forwards;
+}
+@keyframes masonryFadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Load More Button */
+.gallery-load-more {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 2.4rem;
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  border-radius: 5px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.22s;
+}
+.gallery-load-more:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26,107,58,0.2);
+}
+.gallery-load-more:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="nav">
+  <a href="#home" class="logo-mark">
+     <img src="assets/img/dcd logo.png" alt="DCD Logo" class="logo-img-real">  </a>
+  <ul class="nav-links">
+    <li><a href="#funeral"><i class="fa-solid fa-dove nav-icon"></i>Funeral</a></li>
+    <li><a href="#defib"><i class="fa-solid fa-heart-pulse nav-icon"></i>Defibrillator</a></li>
+    <li><a href="#ramadhan"><i class="fa-solid fa-moon nav-icon"></i>Ramadhan</a></li>
+    <li><a href="#homeless"><i class="fa-solid fa-hand-holding-heart nav-icon"></i>Homeless</a></li>
+    <li><a href="#projects"><i class="fa-solid fa-seedling nav-icon"></i>Projects</a></li>
+    <li><a href="#donate"><i class="fa-solid fa-hand-holding-dollar nav-icon"></i>Donate</a></li>
+    <li><a href="#contact"><i class="fa-solid fa-envelope nav-icon"></i>Contact</a></li>
+  </ul>
+  <a href="#donate" class="nav-donate"><i class="fa-solid fa-heart" style="margin-right:0.4rem;font-size:0.75rem"></i>Donate Now</a>
+  <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══ MOBILE MENU OVERLAY ══ -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mm-header">
+    <a href="#home" class="logo-mark mm-logo" onclick="closeMobileMenu()">
+     <img src="assets/img/dcd logo.png" alt="DCD Logo" class="logo-img-real">    </a>
+    <button class="mm-close" onclick="closeMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <nav class="mm-nav">
+    <a href="#funeral" onclick="closeMobileMenu()"><i class="fa-solid fa-dove"></i>Funeral Service</a>
+    <a href="#defib" onclick="closeMobileMenu()"><i class="fa-solid fa-heart-pulse"></i>Defibrillator</a>
+    <a href="#ramadhan" onclick="closeMobileMenu()"><i class="fa-solid fa-moon"></i>Ramadhan</a>
+    <a href="#homeless" onclick="closeMobileMenu()"><i class="fa-solid fa-hands-holding-heart"></i>Homeless Food</a>
+    <a href="#projects" onclick="closeMobileMenu()"><i class="fa-solid fa-seedling"></i>Projects</a>
+    <a href="#contact" onclick="closeMobileMenu()"><i class="fa-solid fa-envelope"></i>Contact</a>
+  </nav>
+  <div class="mm-bottom">
+    <a href="#donate" class="mm-donate" onclick="closeMobileMenu()"><i class="fa-solid fa-heart"></i>Donate Now</a>
+    <div class="mm-contact-quick">
+      <a href="tel:01302000000"><i class="fa-solid fa-phone"></i>01302 000000</a>
+    </div>
+  </div>
+</div>
+<div class="mobile-menu-backdrop" id="mmBackdrop" onclick="closeMobileMenu()"></div>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+  <div class="hero-l">
+    <div class="hero-tag-pill">
+      <span class="pill-dot"></span>
+      <span class="pill-text">Doncaster · Est. Serving Community</span>
+    </div>
+    <h1 class="hero-h1">
+      Stronger<br>
+      <span class="line2">Doncaster,</span><br>
+      <span class="line3">Together</span>
+    </h1>
+    <p class="hero-sub">A 100% volunteer-driven charity supporting Doncaster's community — funeral services, defibrillators, Ramadhan food packs, homeless support and more. Every penny goes directly to those in need.</p>
+    <div class="hero-btns">
+      <a href="#donate" class="btn-accent">Donate Now</a>
+      <a href="#funeral" class="btn-outline-w">Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hs-val">100%</div>
+        <div class="hs-lbl">Donation Policy</div>
+      </div>
+      <div>
+        <div class="hs-val">100%</div>
+        <div class="hs-lbl">Volunteer Driven</div>
+      </div>
+      <div>
+        <div class="hs-val">6+</div>
+        <div class="hs-lbl">Active Projects</div>
+      </div>
+      <div>
+        <div class="hs-val">£0</div>
+        <div class="hs-lbl">Admin Costs</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-r">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/cGfvU8kqun2EP8DQ/img-20251224-wa0007-TBIblhAv8055ekFn.jpg" alt="Doncaster Community Development">
+    <div class="hero-r-ov"></div>
+    <div class="hero-float">
+      <div class="hf-icon-fa"><i class="fa-solid fa-handshake"></i></div>
+      <div>
+        <div class="hf-label">Registered Charity</div>
+        <div class="hf-val">Doncaster, South Yorkshire</div>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="hb-main">100%</div>
+      <div class="hb-sub">Volunteer Driven</div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION BAR -->
+<div class="mbar">
+  <div class="mbar-in">
+    <div class="mbar-q">"Supporting our community when they need it <strong>most</strong> — always with dignity, always with care."</div>
+    <div class="mbar-sep"></div>
+    <div class="mbar-vals">
+      <div>
+        <div class="mv-n">£0</div>
+        <div class="mv-l">Overhead Costs</div>
+      </div>
+      <div>
+        <div class="mv-n">5+</div>
+        <div class="mv-l">Projects Running</div>
+      </div>
+      <div>
+        <div class="mv-n">24/7</div>
+        <div class="mv-l">Funeral Support</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FUNERAL SERVICE ══ -->
+<section class="sec funeral-bg" id="funeral">
+  <div class="con">
+    <div style="text-align:center;max-width:650px;margin:0 auto 1rem" class="rv">
+      <div class="eyebrow" style="justify-content:center">
+        <span>Funeral Service</span>
+      </div>
+      <h2 class="sh">Doncaster Muslim <em>Funeral Service</em></h2>
+      <p class="sp" style="margin:0.8rem auto 0;text-align:center">Serving with heart — supporting families with care, compassion, and respect during the most difficult of times. <strong style="color:var(--primary)">في سبيل الله — Serving the community for the sake of Allah.</strong></p>
+    </div>
+
+    <div class="funeral-grid">
+      <div class="rv funeral-gallery-wrap">
+        <!-- Main hero image -->
+        <div class="fg-main">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=656,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768007656759-CR2ir5PHYBs2VpJS.jpg" alt="Funeral Service" class="funeral-hero-img">
+        </div>
+        <!-- Thumb gallery grid -->
+        <div class="fg-thumbs">
+          <div class="fg-thumb"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=966,fit=crop/cGfvU8kqun2EP8DQ/football-tournament-YyQf76napEnt48SE.jpg" alt="Community gathering"><div class="fg-thumb-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+          <div class="fg-thumb"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008245734-3sCxbMeet7I8eBaO.jpg" alt="Community support"><div class="fg-thumb-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+          <div class="fg-thumb"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=553,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008223057-ssqbQbDpCy6XUBbk.jpg" alt="Service dignity"><div class="fg-thumb-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+          <div class="fg-thumb"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768007862952-xkNqKYUFRE25PqeG.jpg" alt="Memorial care"><div class="fg-thumb-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+          <div class="fg-thumb"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=607,fit=crop/cGfvU8kqun2EP8DQ/file_00000000834c722fa3a8efa5812e1aea-G3jI2FU0Ktlqu40G.png" alt="Funeral service"><div class="fg-thumb-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+        </div>
+      </div>
+
+      <div class="funeral-content rv">
+        <div class="eyebrow">Our Services</div>
+        <h2 class="sh">Compassionate care<br>every <em>step</em> of the way</h2>
+        <div class="f-arabic">
+          في سبيل الله
+          <span class="f-arabic-sub">Serving the community for the sake of Allah</span>
+        </div>
+        <p class="funeral-desc">When a loved one passes, we stand beside you. Our volunteer-led team provides complete Islamic funeral support — from ghusl and kafan to janazah and burial — ensuring every farewell honours the life that was lived and respects Islamic traditions.</p>
+        <div class="funeral-feats">
+          <div class="ff">
+            <div class="ff-t"><i class="fa-solid fa-mosque ff-icon"></i>Islamic Ghusl Course</div>
+            <div class="ff-d">Organised by Doncaster Muslim Funeral Service — teaching the community</div>
+          </div>
+          <div class="ff">
+            <div class="ff-t"><i class="fa-solid fa-car ff-icon"></i>Hearse &amp; Transport</div>
+            <div class="ff-d">Professional funeral transport arranged with dignity and respect</div>
+          </div>
+          <div class="ff">
+            <div class="ff-t"><i class="fa-solid fa-clipboard-list ff-icon"></i>Funeral Planning</div>
+            <div class="ff-d">Personalised support helping arrange meaningful services</div>
+          </div>
+          <div class="ff">
+            <div class="ff-t"><i class="fa-solid fa-people-group ff-icon"></i>Community Support</div>
+            <div class="ff-d">Comfort and practical help during difficult times</div>
+          </div>
+          <div class="ff">
+            <div class="ff-t"><i class="fa-solid fa-hands-helping ff-icon"></i>Volunteer Help</div>
+            <div class="ff-d">Food packs and essentials provided to grieving families</div>
+          </div>
+          <div class="ff">
+            <div class="ff-t"><i class="fa-solid fa-phone ff-icon"></i>24/7 Contact</div>
+            <div class="ff-d">Available around the clock — grief doesn't keep office hours</div>
+          </div>
+        </div>
+        <div class="funeral-note">
+          <strong>Note:</strong> "Our funeral service is entirely volunteer-run and provided for the sake of Allah. No family should face this journey alone or under financial strain."
+        </div>
+        <div style="margin-top:1.8rem;display:flex;gap:0.8rem;flex-wrap:wrap">
+          <a href="#contact" class="btn-primary">Get Support Now</a>
+          <a href="tel:01302000000" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.85rem;font-weight:600;color:var(--primary);text-decoration:none;padding:0.8rem 0"><i class="fa-solid fa-phone"></i> 01302 000000</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DEFIBRILLATOR ══ -->
+<section class="sec defib-bg" id="defib">
+  <div class="con">
+    <div class="defib-in">
+      <div class="rv">
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=553,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008223057-ssqbQbDpCy6XUBbk.jpg" alt="Defibrillator Project - Red Phone Boxes" class="defib-hero-img">
+        <div class="defib-sub-grid">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008245734-3sCxbMeet7I8eBaO.jpg" alt="Volunteer Training" style="height:130px;object-fit:cover;border-radius:3px;border:2px solid rgba(255,255,255,0.15)">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008128699-BPuVV93DgVQvf8Zt.jpg" alt="AED Device" style="height:130px;object-fit:cover;border-radius:3px;border:2px solid rgba(255,255,255,0.15)">
+        </div>
+      </div>
+
+      <div class="defib-content rv">
+        <div class="eyebrow">Defibrillator Projects</div>
+        <h2 class="sh">Saving <em>lives</em> across Doncaster</h2>
+        <p class="defib-desc">Sudden Cardiac Arrest can happen anywhere, anytime. DCD places publicly accessible defibrillators (AEDs) across Doncaster — in iconic red phone boxes, community centres, and public spaces — giving everyone the best possible chance when seconds count.</p>
+
+        <div class="defib-highlights">
+          <div class="dh">
+            <div class="dh-title"><i class="fa-solid fa-chalkboard-user dh-icon"></i> Volunteer Training</div>
+            <div class="dh-text">Teaching locals to use defibrillators confidently during emergencies — knowledge saves lives</div>
+          </div>
+          <div class="dh">
+            <div class="dh-title"><i class="fa-solid fa-location-dot dh-icon"></i> Community Access</div>
+            <div class="dh-text">Placing AEDs in public spots for quick, lifesaving response — 24/7 accessible</div>
+          </div>
+          <div class="dh">
+            <div class="dh-title"><i class="fa-solid fa-truck-medical dh-icon"></i> YAS Registered</div>
+            <div class="dh-text">Registered with Yorkshire Ambulance Service so dispatchers can direct callers to our devices</div>
+          </div>
+          <div class="dh">
+            <div class="dh-title"><i class="fa-solid fa-piggy-bank dh-icon"></i> Fully Funded</div>
+            <div class="dh-text">100% funded by community donations — every pound goes directly to purchasing certified AEDs</div>
+          </div>
+        </div>
+
+        <div class="defib-stats">
+          <div>
+            <div class="ds-n">50%</div>
+            <div class="ds-l">Survival with AED + CPR</div>
+          </div>
+          <div>
+            <div class="ds-n">9%</div>
+            <div class="ds-l">Survival with CPR alone</div>
+          </div>
+          <div>
+            <div class="ds-n">24/7</div>
+            <div class="ds-l">Public access to AEDs</div>
+          </div>
+        </div>
+        <a href="#contact" class="btn-accent" style="display:inline-block;margin-top:2rem">Support This Project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RAMADHAN FOOD PACKS ══ -->
+<section class="sec ramadhan-bg" id="ramadhan">
+  <div class="con">
+    <div class="ram-head rv">
+      <div>
+        <div class="eyebrow">Ramadhan Food Packs</div>
+        <h2 class="sh">Uniting locals with <em>care &amp; respect</em></h2>
+        <p class="sp">We unite locals to provide Ramadhan food packs with care and respect. Driven by volunteers, every donation goes directly to those in need — ensuring no family goes without during the blessed month.</p>
+        <a href="#donate" class="btn-primary" style="margin-top:1.5rem;display:inline-block">Sponsor a Family</a>
+      </div>
+      <div>
+        <div class="ram-imgs">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=553,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008223057-ssqbQbDpCy6XUBbk.jpg" alt="Packing food packs" class="ri-big" style="height:200px">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768007862952-xkNqKYUFRE25PqeG.jpg" alt="Food delivery" class="ri-sm" style="height:130px">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008245734-3sCxbMeet7I8eBaO.jpg" alt="Meals served" class="ri-sm" style="height:130px">
+        </div>
+      </div>
+    </div>
+
+    <div class="ram-cards rv">
+      <div class="rc">
+        <div class="rc-num">01</div>
+        <div class="rc-icon-fa"><i class="fa-solid fa-basket-shopping"></i></div>
+        <div class="rc-title">Essential Food Hampers</div>
+        <p class="rc-text">Halal staples, rice, pulses, cooking oil, dates and essentials providing nutritious Suhoor and Iftar meals. Every pack assembled with care by our volunteers.</p>
+      </div>
+      <div class="rc">
+        <div class="rc-num">02</div>
+        <div class="rc-icon-fa"><i class="fa-solid fa-hands-holding-child"></i></div>
+        <div class="rc-title">Volunteer Help</div>
+        <p class="rc-text">Community members come together to prepare and deliver food packs with kindness — our packing days are a community event in themselves.</p>
+      </div>
+      <div class="rc">
+        <div class="rc-num">03</div>
+        <div class="rc-icon-fa"><i class="fa-solid fa-house"></i></div>
+        <div class="rc-title">Home Delivery</div>
+        <p class="rc-text">For elderly, disabled or vulnerable families unable to collect, our volunteers deliver directly to the door — because dignity matters in how we give.</p>
+      </div>
+      <div class="rc">
+        <div class="rc-num">04</div>
+        <div class="rc-icon-fa"><i class="fa-solid fa-moon"></i></div>
+        <div class="rc-title">Community Iftar</div>
+        <p class="rc-text">We organise community Iftar gatherings bringing Doncaster's Muslim community together to break fast and strengthen bonds of brotherhood and sisterhood.</p>
+      </div>
+      <div class="rc">
+        <div class="rc-num">05</div>
+        <div class="rc-icon-fa"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <div class="rc-title">Zakat &amp; Sadaqah Eligible</div>
+        <p class="rc-text">100% of food pack donations reach those in need. Your Zakat and Sadaqah are handled with full accountability and transparency.</p>
+      </div>
+      <div class="rc" style="background:var(--cream)">
+        <div class="rc-num">06</div>
+        <div class="rc-icon-fa"><i class="fa-solid fa-box-open"></i></div>
+        <div class="rc-title">Ramadhan Support</div>
+        <p class="rc-text">Providing food packs to families in need during Ramadhan with care and respect. Nutritious essentials carefully selected to support fasting families throughout Ramadhan.</p>
+      </div>
+    </div>
+
+    <div class="ram-cta-strip rv">
+      <div class="rcs-text">"The best charity is that given in <strong>Ramadhan</strong> — every pack carries a prayer for the giver and warmth for the receiver."</div>
+      <a href="#donate" class="btn-accent">Donate a Pack</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOMELESS FOOD SHARE ══ -->
+<section class="sec homeless-bg" id="homeless">
+  <div class="con">
+    <div class="homeless-in">
+      <div class="rv">
+        <div class="eyebrow">Homeless Food Share</div>
+        <h2 class="sh">Our <em>Mission</em> — No one goes hungry</h2>
+        <p style="font-size:0.95rem;line-height:1.8;color:var(--muted);margin-top:1rem">Supporting those in need with food, care, and community spirit. Our Homeless Food Share initiative provides regular, warm, nutritious meals and essential care packages to those sleeping rough or in temporary accommodation across Doncaster.</p>
+        <div class="homeless-list">
+          <div class="hl">
+            <div class="hl-icon-fa"><i class="fa-solid fa-coins"></i></div>
+            <div>
+              <div class="hl-t">Donation Impact</div>
+              <div class="hl-d">Every penny goes directly to those in need — fresh, nutritious meals shared daily with care and compassion</div>
+            </div>
+          </div>
+          <div class="hl">
+            <div class="hl-icon-fa"><i class="fa-solid fa-utensils"></i></div>
+            <div>
+              <div class="hl-t">Meal Distribution</div>
+              <div class="hl-d">Regular hot meals distributed at community locations across Doncaster town centre — no questions asked</div>
+            </div>
+          </div>
+          <div class="hl">
+            <div class="hl-icon-fa"><i class="fa-solid fa-people-carry-box"></i></div>
+            <div>
+              <div class="hl-t">Volunteer Support</div>
+              <div class="hl-d">Community members joining hands to serve — more than food, we sit, listen, and see the person</div>
+            </div>
+          </div>
+          <div class="hl">
+            <div class="hl-icon-fa"><i class="fa-solid fa-shirt"></i></div>
+            <div>
+              <div class="hl-t">Winter Essentials</div>
+              <div class="hl-d">Sleeping bags, warm clothing, gloves and hygiene packs distributed during cold months</div>
+            </div>
+          </div>
+          <div class="hl">
+            <div class="hl-icon-fa"><i class="fa-solid fa-hospital"></i></div>
+            <div>
+              <div class="hl-t">Signposting Services</div>
+              <div class="hl-d">Connecting rough sleepers with local housing, shelter and healthcare resources</div>
+            </div>
+          </div>
+        </div>
+        <div class="homeless-note">
+          <strong>Join Us:</strong> We're always looking for volunteers to help with meal prep and distribution, and donations of tinned food, warm clothing, and hygiene products. Every contribution changes lives.
+        </div>
+        <div style="margin-top:1.8rem;display:flex;gap:0.8rem;flex-wrap:wrap">
+          <a href="#contact" class="btn-primary">Volunteer or Donate</a>
+        </div>
+      </div>
+
+      <div class="rv">
+        <!-- Photo grid from homeless page -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div class="hig tall" style="border-radius:4px;overflow:hidden">
+            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768007862952-xkNqKYUFRE25PqeG.jpg" alt="Serving meals" style="width:100%;height:360px;object-fit:cover;display:block">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="border-radius:4px;overflow:hidden">
+              <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=553,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008223057-ssqbQbDpCy6XUBbk.jpg" alt="Food distribution" style="width:100%;height:175px;object-fit:cover;display:block">
+            </div>
+            <div style="border-radius:4px;overflow:hidden">
+              <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008245734-3sCxbMeet7I8eBaO.jpg" alt="Community care" style="width:100%;height:175px;object-fit:cover;display:block">
+            </div>
+          </div>
+          <div style="grid-column:span 2;border-radius:4px;overflow:hidden">
+            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008128699-BPuVV93DgVQvf8Zt.jpg" alt="Hope - sharing kindness" style="width:100%;height:160px;object-fit:cover;display:block">
+          </div>
+        </div>
+        <div style="margin-top:0.8rem;padding:1rem 1.2rem;background:var(--primary);border-radius:4px;color:white;text-align:center">
+          <div style="font-family:'Libre Baskerville',serif;font-size:1.1rem;font-style:italic">"Hope — sharing kindness one meal at a time in Doncaster"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OTHER PROJECTS ══ -->
+<section class="sec other-bg" id="projects">
+  <div class="con">
+    <div class="projects-about rv">
+      <div>
+        <div class="eyebrow">Other Projects</div>
+        <h2 class="sh">About Doncaster <em>Community</em></h2>
+        <p class="sp">We're a volunteer charity supporting local needs — from food packs to defibrillators, every donation goes directly to our projects. <em>"Truly makes a difference."</em></p>
+        <p style="font-size:0.9rem;color:var(--muted);line-height:1.75;margin-top:1rem">Beyond our core services, DCD runs a range of initiatives that bring Doncaster together — from football tournaments and youth programmes to emergency relief and community events.</p>
+        <a href="#contact" class="btn-primary" style="margin-top:1.8rem;display:inline-block">Join Us</a>
+      </div>
+      <div>
+        <div style="position:relative">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=607,fit=crop/cGfvU8kqun2EP8DQ/file_00000000834c722fa3a8efa5812e1aea-G3jI2FU0Ktlqu40G.png" alt="Community flowers" style="width:100%;height:300px;object-fit:cover;border-radius:4px;display:block">
+          <div style="position:absolute;bottom:1.5rem;right:1.5rem;background:white;border-radius:4px;padding:1rem 1.2rem;box-shadow:0 12px 36px rgba(0,0,0,0.15);max-width:180px">
+            <span style="font-size:1.2rem;color:var(--primary);display:block;margin-bottom:0.2rem">❝</span>
+            <p style="font-size:0.82rem;font-style:italic;color:var(--dark);line-height:1.4">Truly makes a difference.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery — Masonry style with Load More -->
+    <div class="rv" style="margin-bottom:2.5rem" id="gallerySection">
+      <h3 style="font-family:'Libre Baskerville',serif;font-size:1.6rem;font-weight:700;color:var(--dark);margin-bottom:0.5rem;text-align:center">Gallery</h3>
+      <p style="text-align:center;color:var(--muted);font-size:0.88rem;margin-bottom:2rem">Snapshots of our community projects in action</p>
+      <div class="masonry-grid" id="masonryGrid">
+        <div class="masonry-item" data-caption="Ramadhan Packing Day">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=553,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008223057-ssqbQbDpCy6XUBbk.jpg" alt="Packing food packs" loading="lazy">
+          <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="masonry-item" data-caption="Defibrillator Project">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008245734-3sCxbMeet7I8eBaO.jpg" alt="Defibrillator Project" loading="lazy">
+          <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="masonry-item" data-caption="Volunteer Outreach">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768007862952-xkNqKYUFRE25PqeG.jpg" alt="Volunteer Outreach" loading="lazy">
+          <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="masonry-item" data-caption="Serving Meals — Homeless Food Share">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008128699-BPuVV93DgVQvf8Zt.jpg" alt="Serving Meals" loading="lazy">
+          <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="masonry-item" data-caption="Football Tournament">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=966,fit=crop/cGfvU8kqun2EP8DQ/football-tournament-YyQf76napEnt48SE.jpg" alt="Football Tournament" loading="lazy">
+          <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="masonry-item" data-caption="Community Events">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=607,fit=crop/cGfvU8kqun2EP8DQ/file_00000000834c722fa3a8efa5812e1aea-G3jI2FU0Ktlqu40G.png" alt="Community Events" loading="lazy">
+          <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <!-- Hidden extra items (shown on Load More) -->
+        <div class="masonry-item masonry-hidden" data-caption="Funeral Service — Community Support">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=656,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768007656759-CR2ir5PHYBs2VpJS.jpg" alt="Funeral Service" loading="lazy">
+          <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="masonry-item masonry-hidden" data-caption="Community Gathering">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768007862952-xkNqKYUFRE25PqeG.jpg" alt="Community gathering" loading="lazy">
+          <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="masonry-item masonry-hidden" data-caption="Ramadhan Food Packs Distribution">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=553,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008223057-ssqbQbDpCy6XUBbk.jpg" alt="Food distribution" loading="lazy">
+          <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="masonry-item masonry-hidden" data-caption="DCD Volunteers in Action">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008245734-3sCxbMeet7I8eBaO.jpg" alt="Volunteers" loading="lazy">
+          <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="masonry-item masonry-hidden" data-caption="Community Care">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008128699-BPuVV93DgVQvf8Zt.jpg" alt="Community care" loading="lazy">
+          <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="masonry-item masonry-hidden" data-caption="Doncaster Community Spirit">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=607,fit=crop/cGfvU8kqun2EP8DQ/file_00000000834c722fa3a8efa5812e1aea-G3jI2FU0Ktlqu40G.png" alt="Community spirit" loading="lazy">
+          <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem">
+        <button class="gallery-load-more" id="galleryLoadMore" onclick="loadMoreGallery()">
+          <i class="fa-solid fa-images" style="margin-right:0.5rem"></i>Load More Photos
+        </button>
+      </div>
+    </div>
+
+    <div class="projects-grid rv">
+      <div class="pg">
+        <div class="pg-icon-fa"><i class="fa-solid fa-futbol"></i></div>
+        <div class="pg-t">Football Tournaments</div>
+        <p class="pg-d">Nationwide Charity Football Tournaments — building friendships and community spirit across Doncaster's diverse communities.</p>
+      </div>
+      <div class="pg">
+        <div class="pg-icon-fa"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="pg-t">Youth Programmes</div>
+        <p class="pg-d">Educational and skills workshops for young people, giving them confidence to thrive in education and beyond.</p>
+      </div>
+      <div class="pg">
+        <div class="pg-icon-fa"><i class="fa-solid fa-clipboard-list"></i></div>
+        <div class="pg-t">NADRA Support</div>
+        <p class="pg-d">Helping community members with documentation and administrative support services.</p>
+      </div>
+      <div class="pg">
+        <div class="pg-icon-fa"><i class="fa-solid fa-calendar-days"></i></div>
+        <div class="pg-t">Community Events</div>
+        <p class="pg-d">Seasonal gatherings, charity drives, fundraising dinners and awareness campaigns celebrating our diverse community.</p>
+      </div>
+      <div class="pg">
+        <div class="pg-icon-fa"><i class="fa-solid fa-kit-medical"></i></div>
+        <div class="pg-t">First Aid Training</div>
+        <p class="pg-d">CPR and first aid awareness workshops empowering community with knowledge that saves lives.</p>
+      </div>
+      <div class="pg">
+        <div class="pg-icon-fa"><i class="fa-solid fa-place-of-worship"></i></div>
+        <div class="pg-t">Faith &amp; Wellbeing</div>
+        <p class="pg-d">Collaborating with local mosques and community centres to provide holistic support respecting all community needs.</p>
+      </div>
+      <div class="pg">
+        <div class="pg-icon-fa"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="pg-t">Emergency Relief</div>
+        <p class="pg-d">When crisis strikes our volunteers mobilise quickly to provide immediate practical help to affected families.</p>
+      </div>
+      <div class="pg" style="background:var(--primary);cursor:pointer" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        <div class="pg-icon-fa" style="background:rgba(255,255,255,0.15);color:white"><i class="fa-solid fa-plus"></i></div>
+        <div class="pg-t" style="color:white">Have an idea?</div>
+        <p class="pg-d" style="color:rgba(255,255,255,0.65)">If you see a need in Doncaster, let's talk about how DCD can make it happen together.</p>
+        <div style="margin-top:1rem;font-size:0.78rem;color:var(--accent-light);font-weight:700;letter-spacing:0.05em;text-transform:uppercase">Get in touch <i class="fa-solid fa-arrow-right"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DONATE ══ -->
+<section id="donate" style="background:var(--dark);padding:6rem 0">
+  <div class="donate-inner">
+    <div class="donate-info rv">
+      <div class="eyebrow">Donate</div>
+      <h2 class="sh" style="color:white">Donate to Doncaster <em style="color:var(--accent-light)">Community Development</em></h2>
+      <div class="donate-policy">
+        <div class="dp-icon"><i class="fa-solid fa-circle-check" style="color:var(--accent-light);font-size:1.4rem"></i></div>
+        <div>
+          <div class="dp-text">100% Donation Policy</div>
+          <div class="dp-sub">Every penny goes directly to our projects — zero admin costs</div>
+        </div>
+      </div>
+      <p class="donate-desc">We're a volunteer-driven charity supporting local needs — from funeral services to food shares and defibrillator projects. Your donation makes an immediate difference in Doncaster.</p>
+
+      <div class="bank-section">
+        <div class="bs-title">Bank Transfer Details</div>
+        <div class="bank-cards-row">
+          <div class="bc">
+            <div class="bc-name"><i class="fa-solid fa-dove" style="margin-right:0.4rem"></i>Donate to Funeral Service — Funeral Service Account</div>
+            <div class="bc-rows">
+              <div class="bc-row">
+                <span class="bc-key">Account Name</span>
+                <span class="bc-val">Doncaster Community Development</span>
+              </div>
+              <div class="bc-row">
+                <span class="bc-key">Sort Code</span>
+                <span class="bc-val">30-96-26</span>
+              </div>
+              <div class="bc-row">
+                <span class="bc-key">Account No</span>
+                <span class="bc-val">82545560</span>
+              </div>
+            </div>
+          </div>
+          <div class="bc">
+            <div class="bc-name"><i class="fa-solid fa-seedling" style="margin-right:0.4rem"></i>All Other DCD Projects</div>
+            <div class="bc-rows">
+              <div class="bc-row">
+                <span class="bc-key">Account Name</span>
+                <span class="bc-val">Doncaster Community Development</span>
+              </div>
+              <div class="bc-row">
+                <span class="bc-key">Sort Code</span>
+                <span class="bc-val">30-96-26</span>
+              </div>
+              <div class="bc-row">
+                <span class="bc-key">Account No</span>
+                <span class="bc-val">47363768</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="donate-cta-panel rv">
+      <div class="dcp-title">How to Donate</div>
+      <div class="dcp-sub">Every penny goes directly to those in need — zero admin, zero overhead.</div>
+      <div class="dcp-steps">
+        <div class="dcp-step">
+          <div class="dcp-step-num">1</div>
+          <div>
+            <div class="dcp-step-t">Choose your project</div>
+            <div class="dcp-step-d">Funeral Service, Defibrillator, Ramadhan Packs, Homeless Fund or all DCD projects</div>
+          </div>
+        </div>
+        <div class="dcp-step">
+          <div class="dcp-step-num">2</div>
+          <div>
+            <div class="dcp-step-t">Transfer using bank details on the left</div>
+            <div class="dcp-step-d">Use your name as reference. Both accounts are verified Lloyds accounts.</div>
+          </div>
+        </div>
+        <div class="dcp-step">
+          <div class="dcp-step-num">3</div>
+          <div>
+            <div class="dcp-step-t">Get in touch to confirm</div>
+            <div class="dcp-step-d">Message us on social media or by phone and we'll acknowledge every donation</div>
+          </div>
+        </div>
+      </div>
+      <a href="#contact" class="dcp-btn">Contact Us to Confirm Donation</a>
+      <div class="dcp-policy">
+        <i class="fa-solid fa-circle-check" style="color:var(--accent-light)"></i>
+        <span>100% Donation Policy — all funds go directly to projects</span>
+      </div>
+      <div class="dcp-social">
+        <div class="dcp-social-lbl">Also reach us on</div>
+        <div style="display:flex;gap:0.6rem;margin-top:0.6rem">
+          <a href="#" class="soc" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.6)"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="soc" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.6)"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="soc" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.6)"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" class="soc" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.6)"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="contact-bg" id="contact">
+  <div class="con">
+    <div style="text-align:center;max-width:600px;margin:0 auto 4rem" class="rv">
+      <div class="eyebrow" style="justify-content:center"><span>Get In Touch</span></div>
+      <h2 class="sh">Reach out — we're here<br>to <em>listen &amp; help</em></h2>
+    </div>
+    <div class="contact-in">
+      <div class="rv">
+        <p class="contact-desc">Whether you want to donate, volunteer, refer someone in need, or find out more — we'd love to hear from you. Our team of volunteers is here to help.</p>
+        <div class="cinfo-list">
+          <div class="ci">
+            <div class="ci-ico"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="ci-lbl">Phone</div>
+              <div class="ci-val"><a href="tel:01302 000000" style="color:#141414">01302 000000</a></div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-ico"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <div class="ci-lbl">Email</div>
+              <div class="ci-val"><a href="mailto:info@dcd-uk.com" class="__cf_email__" data-cfemail="" style="color:#141414">info@dcd-uk.com</a></div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-ico"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="ci-lbl">Location</div>
+              <div class="ci-val">Doncaster, South Yorkshire, UK</div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-ico"><i class="fa-regular fa-clock"></i></div>
+            <div>
+              <div class="ci-lbl">Availability</div>
+              <div class="ci-val">24/7 for urgent funeral support</div>
+            </div>
+          </div>
+        </div>
+        <div class="social-row">
+          <a href="#" class="soc" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="soc" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="soc" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" class="soc" title="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="quick-links">
+          <div class="ql-title">Jump to a Section</div>
+          <div class="ql-pills">
+            <a href="#funeral" class="ql-pill"><i class="fa-solid fa-dove" style="margin-right:0.35rem"></i>Funeral</a>
+            <a href="#defib" class="ql-pill"><i class="fa-solid fa-heart-pulse" style="margin-right:0.35rem"></i>Defibrillator</a>
+            <a href="#ramadhan" class="ql-pill"><i class="fa-solid fa-moon" style="margin-right:0.35rem"></i>Ramadhan</a>
+            <a href="#homeless" class="ql-pill"><i class="fa-solid fa-hands-holding-heart" style="margin-right:0.35rem"></i>Homeless</a>
+            <a href="#projects" class="ql-pill"><i class="fa-solid fa-seedling" style="margin-right:0.35rem"></i>Projects</a>
+            <a href="#donate" class="ql-pill"><i class="fa-solid fa-hand-holding-dollar" style="margin-right:0.35rem"></i>Donate</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form rv">
+        <div class="cf-title">Send us a message</div>
+        <div class="cf-sub">We'll get back to you as soon as possible — usually within 24 hours.</div>
+        <div class="cfg-row">
+          <div class="cfg">
+            <label>First Name</label>
+            <input type="text" placeholder="Your first name">
+          </div>
+          <div class="cfg">
+            <label>Last Name</label>
+            <input type="text" placeholder="Last name">
+          </div>
+        </div>
+        <div class="cfg">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="cfg">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="07700 000000">
+        </div>
+        <div class="cfg">
+          <label>I'm enquiring about</label>
+          <select>
+            <option>Funeral Service</option>
+            <option>Defibrillator Project</option>
+            <option>Ramadhan Food Packs</option>
+            <option>Homeless Food Share</option>
+            <option>Other Projects</option>
+            <option>Donation / Sponsorship</option>
+            <option>Volunteering</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="cfg">
+          <label>Your Message</label>
+          <textarea placeholder="Tell us how we can help, or how you'd like to get involved..."></textarea>
+        </div>
+        <button class="cf-sub-btn">Send Message</button>
+        <p class="cf-urgent">For urgent funeral enquiries please call directly: <strong>01302 000000</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LIGHTBOX ══ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <div class="lb-backdrop" onclick="closeLightbox()"></div>
+  <button class="lb-close" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lb-prev" onclick="lbPrev()"><i class="fa-solid fa-chevron-left"></i></button>
+  <button class="lb-next" onclick="lbNext()"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="lb-inner">
+    <img class="lb-img" id="lbImg" src="" alt="">
+    <div class="lb-caption" id="lbCaption"></div>
+    <div class="lb-counter" id="lbCounter"></div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="con">
+    <div class="footer-grid">
+      <div>
+        <div class="fb-name">Doncaster Community <span>Development</span></div>
+        <p class="fb-desc">A fully volunteer-driven charity serving the people of Doncaster through compassionate community care. 100% of every donation goes directly to those in need — zero admin, zero overhead.</p>
+        <div class="fb-tag">Registered Charity · Doncaster, South Yorkshire</div>
+        <div class="footer-soc">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="fc">
+        <div class="fc-h">Services</div>
+        <a href="#funeral"><i class="fa-solid fa-dove" style="margin-right:0.5rem;opacity:0.6"></i>Funeral Service</a>
+        <a href="#defib"><i class="fa-solid fa-heart-pulse" style="margin-right:0.5rem;opacity:0.6"></i>Defibrillator Projects</a>
+        <a href="#ramadhan"><i class="fa-solid fa-moon" style="margin-right:0.5rem;opacity:0.6"></i>Ramadhan Food Packs</a>
+        <a href="#homeless"><i class="fa-solid fa-hands-holding-heart" style="margin-right:0.5rem;opacity:0.6"></i>Homeless Food Share</a>
+        <a href="#projects"><i class="fa-solid fa-seedling" style="margin-right:0.5rem;opacity:0.6"></i>Other Projects</a>
+      </div>
+      <div class="fc">
+        <div class="fc-h">Organisation</div>
+        <a href="#home">About DCD</a>
+        <a href="#projects">Our Work</a>
+        <a href="#projects">Gallery</a>
+        <a href="#contact">Volunteer</a>
+        <a href="#donate">Donate</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+      <div class="fc">
+        <div class="fc-h">Contact</div>
+        <div class="footer-contact-i"><i class="fa-solid fa-phone"></i><a href="tel:01302 000000" class="__cf_email__" >01302 000000</a></div>
+        <div class="footer-contact-i"><i class="fa-solid fa-envelope"></i><a href="mailto:info@dcd-uk.com" class="__cf_email__" data-cfemail="">info@dcd-uk.com</a></div>
+        <div class="footer-contact-i"><i class="fa-solid fa-location-dot"></i>Doncaster, South Yorkshire</div>
+        <div class="footer-contact-i"><i class="fa-regular fa-clock"></i>24/7 Funeral Support</div>
+        <div style="margin-top:1.2rem">
+          <div style="font-size:0.7rem;color:rgba(255,255,255,0.35);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem">Bank (General)</div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.55)">Sort: 30-96-26</div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.55)">Acc: 47363768</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Doncaster Community Development. All rights reserved.</div>
+      <div class="footer-policy">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Donation Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50));
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+  });
+}, {threshold: 0.08});
+document.querySelectorAll('.rv').forEach((el, i) => {
+  el.style.transitionDelay = (i % 4) * 0.08 + 's';
+  obs.observe(el);
+});
+
+// Stagger cards
+document.querySelectorAll('.rc,.pg,.gg,.ff,.dh,.hl,.bc').forEach((el, i) => {
+  el.style.transitionDelay = (i % 4) * 0.07 + 's';
+  obs.observe(el);
+});
+
+// Amount pills
+document.querySelectorAll('.ap').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.ap').forEach(b => b.classList.remove('sel'));
+    btn.classList.add('sel');
+  });
+});
+
+// ══ MOBILE MENU ══
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const mmBackdrop = document.getElementById('mmBackdrop');
+
+function openMobileMenu() {
+  mobileMenu.classList.add('open');
+  mmBackdrop.classList.add('show');
+  mobileMenuBtn.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+  mmBackdrop.classList.remove('show');
+  mobileMenuBtn.classList.remove('open');
+  document.body.style.overflow = '';
+}
+mobileMenuBtn.addEventListener('click', () => {
+  mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
+});
+// Close on Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeMobileMenu(); closeLightbox(); }
+});
+
+// ══ LIGHTBOX ══
+let lbImages = [];
+let lbIndex  = 0;
+
+function isLbImage(el) {
+  if (el.tagName !== 'IMG') return false;
+  const p = el.parentElement;
+  if (!p) return false;
+  // masonry visible items
+  if (p.classList.contains('masonry-item') && !p.classList.contains('masonry-hidden')) return true;
+  if (p.classList.contains('masonry-item') && p.classList.contains('masonry-visible')) return true;
+  // other sections
+  if (p.classList.contains('fg-thumb')) return true;
+  if (p.classList.contains('fg-main')) return true;
+  if (el.classList.contains('defib-hero-img')) return true;
+  if (p.classList.contains('defib-sub-grid') || el.closest('.defib-sub-grid')) return true;
+  if (el.closest('.ram-imgs')) return true;
+  if (p.classList.contains('hig') || el.closest('.hig')) return true;
+  if (el.closest('.homeless-in')) return true;
+  return false;
+}
+
+function getAllLbImages() {
+  const seen = new Set();
+  const list = [];
+  document.querySelectorAll('img').forEach(img => {
+    if (!isLbImage(img)) return;
+    if (seen.has(img.src)) return;
+    seen.add(img.src);
+    const item = img.closest('[data-caption]');
+    list.push({ src: img.src, alt: item ? item.dataset.caption : (img.alt || '') });
+  });
+  return list;
+}
+
+// Single delegated click on document
+document.addEventListener('click', function(e) {
+  const el = e.target;
+  if (!isLbImage(el)) return;
+  lbImages = getAllLbImages();
+  lbIndex = lbImages.findIndex(i => i.src === el.src);
+  if (lbIndex < 0) lbIndex = 0;
+  openLightbox(lbIndex);
+});
+
+// Style cursors
+function markLbImages() {
+  document.querySelectorAll('img').forEach(img => {
+    if (isLbImage(img)) img.style.cursor = 'zoom-in';
+  });
+}
+markLbImages();
+
+function openLightbox(index) {
+  lbIndex = index;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  showLbImage(false);
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function showLbImage(animate) {
+  const imgEl = document.getElementById('lbImg');
+  const cap   = document.getElementById('lbCaption');
+  const ctr   = document.getElementById('lbCounter');
+  if (animate !== false) {
+    imgEl.classList.add('fading');
+    setTimeout(() => {
+      imgEl.src = lbImages[lbIndex].src;
+      cap.textContent = lbImages[lbIndex].alt;
+      ctr.textContent = (lbIndex + 1) + ' / ' + lbImages.length;
+      imgEl.classList.remove('fading');
+    }, 200);
+  } else {
+    imgEl.src = lbImages[lbIndex].src;
+    cap.textContent = lbImages[lbIndex].alt;
+    ctr.textContent = (lbIndex + 1) + ' / ' + lbImages.length;
+  }
+}
+function lbPrev() {
+  if (!lbImages.length) return;
+  lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length;
+  showLbImage(true);
+}
+function lbNext() {
+  if (!lbImages.length) return;
+  lbIndex = (lbIndex + 1) % lbImages.length;
+  showLbImage(true);
+}
+
+// Keyboard nav
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') lbPrev();
+  if (e.key === 'ArrowRight') lbNext();
+});
+
+// Touch swipe
+let lbTouchStartX = null;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  lbTouchStartX = e.changedTouches[0].clientX;
+}, {passive: true});
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  if (lbTouchStartX === null) return;
+  const dx = e.changedTouches[0].clientX - lbTouchStartX;
+  if (Math.abs(dx) > 50) dx < 0 ? lbNext() : lbPrev();
+  lbTouchStartX = null;
+});
+
+// ══ GALLERY LOAD MORE ══
+function loadMoreGallery() {
+  const hidden = document.querySelectorAll('.masonry-item.masonry-hidden:not(.masonry-visible)');
+  let shown = 0;
+  hidden.forEach(item => {
+    if (shown < 6) {
+      item.classList.add('masonry-visible');
+      // Mark new images with zoom cursor
+      const img = item.querySelector('img');
+      if (img) img.style.cursor = 'zoom-in';
+      shown++;
+    }
+  });
+  const remaining = document.querySelectorAll('.masonry-item.masonry-hidden:not(.masonry-visible)');
+  if (remaining.length === 0) {
+    const btn = document.getElementById('galleryLoadMore');
+    if (btn) { btn.innerHTML = '<i class="fa-solid fa-check" style="margin-right:0.5rem"></i>All Photos Loaded'; btn.disabled = true; }
+  }
+}
+
+</script></body>
+</html>
