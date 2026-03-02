@@ -322,7 +322,7 @@ body{
   display:grid;grid-template-columns:1fr 1fr;gap:5.5rem;align-items:center;
 }
 .defib-hero-img{
-  width:100%;height:340px;object-fit:cover;
+  width:100%;height:100%;object-fit:cover;
   border-radius:4px;display:block;
   border:3px solid rgba(255,255,255,0.15);
 }
@@ -968,8 +968,8 @@ footer{background:var(--charcoal);padding:4.5rem 0 2rem;border-top:1px solid rgb
 
 /* ══ FUNERAL GALLERY ══ */
 .funeral-gallery-wrap { position:sticky; top:calc(68px + 2rem); align-self:start; }
-.fg-main { border-radius:4px; overflow:hidden; margin-bottom:8px; }
-.fg-main img { width:100%;height:360px;object-fit:cover;display:block; transition:transform 0.5s; cursor:zoom-in; }
+.fg-main { border-radius:4px;  margin-bottom:8px; }
+.fg-main img { width:100%;height:100%;object-fit:cover;display:block; transition:transform 0.5s; cursor:zoom-in; }
 .fg-main:hover img { transform:scale(1.03); }
 .fg-thumbs {
   display:grid;grid-template-columns:repeat(5,1fr);gap:6px;
@@ -1111,6 +1111,42 @@ footer{background:var(--charcoal);padding:4.5rem 0 2rem;border-top:1px solid rgb
   cursor: default;
   transform: none;
 }
+.video-section {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Adjust height */
+    overflow: hidden;
+}
+
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5); /* Dark overlay */
+    z-index: 2;
+}
+
+.video-content {
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
 </style>
 </head>
@@ -1196,8 +1232,14 @@ footer{background:var(--charcoal);padding:4.5rem 0 2rem;border-top:1px solid rgb
     </div>
   </div>
   <div class="hero-r">
-    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/cGfvU8kqun2EP8DQ/img-20251224-wa0007-TBIblhAv8055ekFn.jpg" alt="Doncaster Community Development">
-    <div class="hero-r-ov"></div>
+    <!-- <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/cGfvU8kqun2EP8DQ/img-20251224-wa0007-TBIblhAv8055ekFn.jpg" alt="Doncaster Community Development">
+    <div class="hero-r-ov"></div> -->
+    <div class="video-section">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="assets/img/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
     <div class="hero-float">
       <div class="hf-icon-fa"><i class="fa-solid fa-handshake"></i></div>
       <div>
@@ -1249,16 +1291,16 @@ footer{background:var(--charcoal);padding:4.5rem 0 2rem;border-top:1px solid rgb
       <div class="rv funeral-gallery-wrap">
         <!-- Main hero image -->
         <div class="fg-main">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=656,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768007656759-CR2ir5PHYBs2VpJS.jpg" alt="Funeral Service" class="funeral-hero-img">
+          <img src="assets/img/ghusal.jpeg" alt="Funeral Service" class="funeral-hero-img">
         </div>
         <!-- Thumb gallery grid -->
-        <div class="fg-thumbs">
+        <!-- <div class="fg-thumbs">
           <div class="fg-thumb"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=966,fit=crop/cGfvU8kqun2EP8DQ/football-tournament-YyQf76napEnt48SE.jpg" alt="Community gathering"><div class="fg-thumb-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
           <div class="fg-thumb"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008245734-3sCxbMeet7I8eBaO.jpg" alt="Community support"><div class="fg-thumb-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
           <div class="fg-thumb"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=553,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008223057-ssqbQbDpCy6XUBbk.jpg" alt="Service dignity"><div class="fg-thumb-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
           <div class="fg-thumb"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768007862952-xkNqKYUFRE25PqeG.jpg" alt="Memorial care"><div class="fg-thumb-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
           <div class="fg-thumb"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=607,fit=crop/cGfvU8kqun2EP8DQ/file_00000000834c722fa3a8efa5812e1aea-G3jI2FU0Ktlqu40G.png" alt="Funeral service"><div class="fg-thumb-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
-        </div>
+        </div> -->
       </div>
 
       <div class="funeral-content rv">
@@ -1312,11 +1354,11 @@ footer{background:var(--charcoal);padding:4.5rem 0 2rem;border-top:1px solid rgb
   <div class="con">
     <div class="defib-in">
       <div class="rv">
-        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=553,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008223057-ssqbQbDpCy6XUBbk.jpg" alt="Defibrillator Project - Red Phone Boxes" class="defib-hero-img">
-        <div class="defib-sub-grid">
+        <img src="assets/img/ambulance.jpeg" alt="Defibrillator Project - Red Phone Boxes" class="defib-hero-img">
+        <!-- <div class="defib-sub-grid">
           <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008245734-3sCxbMeet7I8eBaO.jpg" alt="Volunteer Training" style="height:130px;object-fit:cover;border-radius:3px;border:2px solid rgba(255,255,255,0.15)">
           <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008128699-BPuVV93DgVQvf8Zt.jpg" alt="AED Device" style="height:130px;object-fit:cover;border-radius:3px;border:2px solid rgba(255,255,255,0.15)">
-        </div>
+        </div> -->
       </div>
 
       <div class="defib-content rv">
@@ -1375,9 +1417,9 @@ footer{background:var(--charcoal);padding:4.5rem 0 2rem;border-top:1px solid rgb
       </div>
       <div>
         <div class="ram-imgs">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=553,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008223057-ssqbQbDpCy6XUBbk.jpg" alt="Packing food packs" class="ri-big" style="height:200px">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768007862952-xkNqKYUFRE25PqeG.jpg" alt="Food delivery" class="ri-sm" style="height:130px">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008245734-3sCxbMeet7I8eBaO.jpg" alt="Meals served" class="ri-sm" style="height:130px">
+          <img src="assets/img/food.jpeg" alt="Packing food packs" class="ri-big" style="height:200px">
+          <img src="assets/img/food-1.jpeg" alt="Food delivery" class="ri-sm" style="height:130px">
+          <img src="assets/img/food-3.jpeg" alt="Meals served" class="ri-sm" style="height:130px">
         </div>
       </div>
     </div>
@@ -1485,18 +1527,18 @@ footer{background:var(--charcoal);padding:4.5rem 0 2rem;border-top:1px solid rgb
         <!-- Photo grid from homeless page -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
           <div class="hig tall" style="border-radius:4px;overflow:hidden">
-            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768007862952-xkNqKYUFRE25PqeG.jpg" alt="Serving meals" style="width:100%;height:360px;object-fit:cover;display:block">
+            <img src="assets/img/food-3.jpeg" alt="Serving meals" style="width:100%;height:360px;object-fit:cover;display:block">
           </div>
           <div style="display:flex;flex-direction:column;gap:8px">
             <div style="border-radius:4px;overflow:hidden">
-              <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=553,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008223057-ssqbQbDpCy6XUBbk.jpg" alt="Food distribution" style="width:100%;height:175px;object-fit:cover;display:block">
+              <img src="assets/img/food-4.jpeg" alt="Food distribution" style="width:100%;height:175px;object-fit:cover;display:block">
             </div>
             <div style="border-radius:4px;overflow:hidden">
-              <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008245734-3sCxbMeet7I8eBaO.jpg" alt="Community care" style="width:100%;height:175px;object-fit:cover;display:block">
+              <img src="assets/img/food-2.jpeg" alt="Community care" style="width:100%;height:175px;object-fit:cover;display:block">
             </div>
           </div>
           <div style="grid-column:span 2;border-radius:4px;overflow:hidden">
-            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008128699-BPuVV93DgVQvf8Zt.jpg" alt="Hope - sharing kindness" style="width:100%;height:160px;object-fit:cover;display:block">
+            <img src="assets/img/food.jpeg" alt="Hope - sharing kindness" style="width:100%;height:160px;object-fit:cover;display:block">
           </div>
         </div>
         <div style="margin-top:0.8rem;padding:1rem 1.2rem;background:var(--primary);border-radius:4px;color:white;text-align:center">
@@ -1510,7 +1552,7 @@ footer{background:var(--charcoal);padding:4.5rem 0 2rem;border-top:1px solid rgb
 <!-- ══ OTHER PROJECTS ══ -->
 <section class="sec other-bg" id="projects">
   <div class="con">
-    <div class="projects-about rv">
+    <div class="projects-about rv" style="align-items: center;">
       <div>
         <div class="eyebrow">Other Projects</div>
         <h2 class="sh">About Doncaster <em>Community</em></h2>
@@ -1520,7 +1562,7 @@ footer{background:var(--charcoal);padding:4.5rem 0 2rem;border-top:1px solid rgb
       </div>
       <div>
         <div style="position:relative">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=607,fit=crop/cGfvU8kqun2EP8DQ/file_00000000834c722fa3a8efa5812e1aea-G3jI2FU0Ktlqu40G.png" alt="Community flowers" style="width:100%;height:300px;object-fit:cover;border-radius:4px;display:block">
+          <img src="assets/img/nadra.jpeg" alt="Community flowers" style="width:100%;height:100%;object-fit:cover;border-radius:4px;display:block">
           <div style="position:absolute;bottom:1.5rem;right:1.5rem;background:white;border-radius:4px;padding:1rem 1.2rem;box-shadow:0 12px 36px rgba(0,0,0,0.15);max-width:180px">
             <span style="font-size:1.2rem;color:var(--primary);display:block;margin-bottom:0.2rem">❝</span>
             <p style="font-size:0.82rem;font-style:italic;color:var(--dark);line-height:1.4">Truly makes a difference.</p>
@@ -1535,52 +1577,52 @@ footer{background:var(--charcoal);padding:4.5rem 0 2rem;border-top:1px solid rgb
       <p style="text-align:center;color:var(--muted);font-size:0.88rem;margin-bottom:2rem">Snapshots of our community projects in action</p>
       <div class="masonry-grid" id="masonryGrid">
         <div class="masonry-item" data-caption="Ramadhan Packing Day">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=553,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008223057-ssqbQbDpCy6XUBbk.jpg" alt="Packing food packs" loading="lazy">
+          <img src="assets/img/grave.jpeg" alt="Packing food packs" loading="lazy">
           <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <div class="masonry-item" data-caption="Defibrillator Project">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008245734-3sCxbMeet7I8eBaO.jpg" alt="Defibrillator Project" loading="lazy">
+          <img src="assets/img/grave-1.jpeg" alt="Defibrillator Project" loading="lazy">
           <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <div class="masonry-item" data-caption="Volunteer Outreach">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768007862952-xkNqKYUFRE25PqeG.jpg" alt="Volunteer Outreach" loading="lazy">
+          <img src="assets/img/grave-2.jpeg" alt="Volunteer Outreach" loading="lazy">
           <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <div class="masonry-item" data-caption="Serving Meals — Homeless Food Share">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008128699-BPuVV93DgVQvf8Zt.jpg" alt="Serving Meals" loading="lazy">
+          <img src="assets/img/grave-3.jpeg" alt="Serving Meals" loading="lazy">
           <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <div class="masonry-item" data-caption="Football Tournament">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=966,fit=crop/cGfvU8kqun2EP8DQ/football-tournament-YyQf76napEnt48SE.jpg" alt="Football Tournament" loading="lazy">
+          <img src="assets/img/grave-4.jpeg" alt="Football Tournament" loading="lazy">
           <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <div class="masonry-item" data-caption="Community Events">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=607,fit=crop/cGfvU8kqun2EP8DQ/file_00000000834c722fa3a8efa5812e1aea-G3jI2FU0Ktlqu40G.png" alt="Community Events" loading="lazy">
+          <img src="assets/img/grave-5.jpeg" alt="Community Events" loading="lazy">
           <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <!-- Hidden extra items (shown on Load More) -->
         <div class="masonry-item masonry-hidden" data-caption="Funeral Service — Community Support">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=656,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768007656759-CR2ir5PHYBs2VpJS.jpg" alt="Funeral Service" loading="lazy">
+          <img src="assets/img/grave-6.jpeg" alt="Funeral Service" loading="lazy">
           <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <div class="masonry-item masonry-hidden" data-caption="Community Gathering">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768007862952-xkNqKYUFRE25PqeG.jpg" alt="Community gathering" loading="lazy">
+          <img src="assets/img/food-1.jpeg" alt="Community gathering" loading="lazy">
           <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <div class="masonry-item masonry-hidden" data-caption="Ramadhan Food Packs Distribution">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=553,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008223057-ssqbQbDpCy6XUBbk.jpg" alt="Food distribution" loading="lazy">
+          <img src="assets/img/food.jpeg"Food distribution" loading="lazy">
           <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <div class="masonry-item masonry-hidden" data-caption="DCD Volunteers in Action">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008245734-3sCxbMeet7I8eBaO.jpg" alt="Volunteers" loading="lazy">
+          <img src="assets/img/food-2.jpeg" alt="Volunteers" loading="lazy">
           <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <div class="masonry-item masonry-hidden" data-caption="Community Care">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=550,fit=crop/cGfvU8kqun2EP8DQ/fb_img_1768008128699-BPuVV93DgVQvf8Zt.jpg" alt="Community care" loading="lazy">
+          <img src="assets/img/food-3.jpeg" alt="Community care" loading="lazy">
           <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <div class="masonry-item masonry-hidden" data-caption="Doncaster Community Spirit">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=607,fit=crop/cGfvU8kqun2EP8DQ/file_00000000834c722fa3a8efa5812e1aea-G3jI2FU0Ktlqu40G.png" alt="Community spirit" loading="lazy">
+          <img src="assets/img/food-4.jpeg" alt="Community spirit" loading="lazy">
           <div class="masonry-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
       </div>
